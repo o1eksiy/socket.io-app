@@ -1,9 +1,9 @@
 define(
-    ["ioredis"],
+    ["ioredis", "config/app"],
 
-    function (Ioredis) {
+    function (Ioredis, Config) {
 
-        return new Ioredis(6379, '127.0.0.1');
+        return new Ioredis(Config.redis.port, Config.redis.host);
 
     }
 );
